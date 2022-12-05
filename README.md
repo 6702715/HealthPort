@@ -23,9 +23,9 @@ HealthPort is cross-platform solution and can be run on Linux, MacOS, and Window
 2. Execute SQL-script HealthPortBack/sql_scripts/mssqlserver/items_create_table.sql
 3. Execute SQL-script HealthPortBack/sql_scripts/mssqlserver/dbo.items.sql
 
-   ![1670237340186](image/README/1670237340186.png)
+   ![1670250108633](image/README/1670250108633.png)
 
-### Mocking
+   Mocking
 
 As a mock system we use Wiremock
 For running Wiremock:
@@ -53,6 +53,8 @@ Go to HealthPortBack and execute:
 dotnet run -project ./HealthPortBack/HealthPortBack.csproj --urls http://0.0.0.0:5045
 Or
 You can run the solution in VSCode via a Terminal task "Run Back"
+
+![1670239699912](image/README/1670239699912.png)
 
 ### Running Front
 
@@ -98,3 +100,5 @@ Set up edgedriver on your system (or driver for any of your favorite browser) in
 Modify UnitTest1.cs for your Front-server address (and your driver if you've changed)
 Run GUI/Selenium tests via command:
 dotnet test
+
+![1670250019520](image/README/1670250019520.png)

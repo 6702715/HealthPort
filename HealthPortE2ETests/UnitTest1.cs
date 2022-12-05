@@ -67,7 +67,7 @@ public class Tests
         int i = 1;
         for (; ; )
         {
-            if (i > 10)
+            if (i > 150)
             {
                 break;
             }
