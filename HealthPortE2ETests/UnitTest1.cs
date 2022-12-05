@@ -148,7 +148,7 @@ public class Tests
         IWebElement? tableElement = this.driver?.FindElement(By.XPath("//table/tbody/tr[" + RowCount + "]/td[1]"));
         string insertedText = tableElement.Text;
 
-        Code.AssertState(string.Equals(insertedText, "Alex Blob"), "Item hasn't been added to the database"); 
+        Code.AssertState(string.Equals(insertedText, "Alex Brokovski"), "Item hasn't been added to the database"); 
     }
 
 
