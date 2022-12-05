@@ -1,0 +1,140 @@
+openapi: '3.0.2'
+info:
+  title: HealthPort API Back Server
+  version: '1.0'
+servers:
+  - url: http://192.168.56.3:5045/
+paths:
+  /register:
+    get:
+      operationId: getAllAdvs
+      responses:
+        '200':
+          description: OK
+          headers:
+            Content-Type:
+              schema:
+                type: string
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Register"
+    post:
+      operationId: postAdv
+      requestBody:
+        description: Add a new record
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                  firstName:
+                    type: string
+                  lastName:
+                    type: string
+                  claim:
+                    type: string
+                  phoneNumber: 
+                    type: string
+                  email:
+                    type: string
+                  claim_details:
+                    type: string
+                  age:
+                    type: number
+                  insurance_USD:
+                    type: number
+                  course:
+                    type: number
+                  insurance_UAH:
+                    type: number
+            example:
+              firstName: Alex
+              lastName: Puzanov
+              claim: I have a problem with my leg
+              phoneNumber: +375 33 670 27 11
+              email: tocoloko@gmail.com
+              claim_details: Broken
+              age: 36
+              insurance_USD: 15
+              course: 25
+              insurance_UAH: 375
+      responses:
+        '201':
+          description: Created
+  /getcourse:
+    get:
+      operationId: getCourse
+      description: 'Get the exchange rate for the current day'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: string
+                  currency:
+                    type: string
+                  course:
+                    type: number
+          headers:
+            Content-Type:
+              schema:
+                type: string
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+  /feedback:
+    post:
+      description: 'Post a new feedback'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                msgText:
+                  type: string
+      responses:
+        '201':
+          description: Created
+      
+components:
+  schemas:
+    Register:
+      type: object
+      properties:
+        id:
+          type: number
+        firstName:
+          type: string
+        lastName:
+          type: string
+        claim:
+          type: string
+        phoneNumber: 
+          type: string
+        email:
+          type: string
+        claim_details:
+          type: string
+        age:
+          type: number
+        insurance_USD:
+          type: number
+        course:
+          type: number
+        insurance_UAH:
+          type: number

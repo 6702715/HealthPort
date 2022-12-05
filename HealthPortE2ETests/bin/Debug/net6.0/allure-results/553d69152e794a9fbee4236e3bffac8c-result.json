@@ -1,0 +1,72 @@
+{
+  "uuid": "46f898c5-24ef-4fd8-acb5-66f9ac7737fb-tr-0-1001",
+  "historyId": "nopCommerceLogIn.Tests.Login",
+  "fullName": "nopCommerceLogIn.Tests.Login",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "NonParallelWorker"
+    },
+    {
+      "name": "host",
+      "value": "ubuntu-qa3"
+    },
+    {
+      "name": "package",
+      "value": "nopCommerceLogIn"
+    },
+    {
+      "name": "testMethod",
+      "value": "Login"
+    },
+    {
+      "name": "testClass",
+      "value": "Tests"
+    },
+    {
+      "name": "suite",
+      "value": "LoginTest"
+    }
+  ],
+  "links": [],
+  "name": "Login",
+  "status": "failed",
+  "statusDetails": {
+    "known": false,
+    "muted": false,
+    "flaky": false,
+    "message": "OpenQA.Selenium.WebDriverException : unknown error: cannot find msedge binary\nTearDown : System.NullReferenceException : Object reference not set to an instance of an object.",
+    "trace": "   at OpenQA.Selenium.WebDriver.UnpackAndThrowOnError(Response errorResponse, String commandToExecute)\n   at OpenQA.Selenium.WebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)\n   at OpenQA.Selenium.WebDriver.StartSession(ICapabilities desiredCapabilities)\n   at OpenQA.Selenium.WebDriver..ctor(ICommandExecutor executor, ICapabilities capabilities)\n   at OpenQA.Selenium.Chromium.ChromiumDriver..ctor(ChromiumDriverService service, ChromiumOptions options, TimeSpan commandTimeout)\n   at OpenQA.Selenium.Edge.EdgeDriver..ctor(EdgeDriverService service, EdgeOptions options, TimeSpan commandTimeout)\n   at OpenQA.Selenium.Edge.EdgeDriver..ctor(EdgeDriverService service, EdgeOptions options)\n   at OpenQA.Selenium.Edge.EdgeDriver..ctor(EdgeOptions options)\n   at OpenQA.Selenium.Edge.EdgeDriver..ctor()\n   at nopCommerceLogIn.Tests.Setup() in /home/user/Projects/nopCommerceLogIn/UnitTest1.cs:line 20\n--TearDown\n   at nopCommerceLogIn.Tests.endTests() in /home/user/Projects/nopCommerceLogIn/UnitTest1.cs:line 58"
+  },
+  "stage": "finished",
+  "description": "\nSetup SetUp method failed\n\nendTests TearDown method failed\n",
+  "steps": [
+    {
+      "name": "Login skipped because of Setup failure",
+      "status": "skipped",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false,
+        "message": "OpenQA.Selenium.WebDriverException : unknown error: cannot find msedge binary\nTearDown : System.NullReferenceException : Object reference not set to an instance of an object.",
+        "trace": "   at OpenQA.Selenium.WebDriver.UnpackAndThrowOnError(Response errorResponse, String commandToExecute)\n   at OpenQA.Selenium.WebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)\n   at OpenQA.Selenium.WebDriver.StartSession(ICapabilities desiredCapabilities)\n   at OpenQA.Selenium.WebDriver..ctor(ICommandExecutor executor, ICapabilities capabilities)\n   at OpenQA.Selenium.Chromium.ChromiumDriver..ctor(ChromiumDriverService service, ChromiumOptions options, TimeSpan commandTimeout)\n   at OpenQA.Selenium.Edge.EdgeDriver..ctor(EdgeDriverService service, EdgeOptions options, TimeSpan commandTimeout)\n   at OpenQA.Selenium.Edge.EdgeDriver..ctor(EdgeDriverService service, EdgeOptions options)\n   at OpenQA.Selenium.Edge.EdgeDriver..ctor(EdgeOptions options)\n   at OpenQA.Selenium.Edge.EdgeDriver..ctor()\n   at nopCommerceLogIn.Tests.Setup() in /home/user/Projects/nopCommerceLogIn/UnitTest1.cs:line 20\n--TearDown\n   at nopCommerceLogIn.Tests.endTests() in /home/user/Projects/nopCommerceLogIn/UnitTest1.cs:line 58"
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [
+        {
+          "name": "Console Output",
+          "source": "5200cd2d7b714be6b5c7fe72a3a3ff10-attachment.txt",
+          "type": "text/plain"
+        }
+      ],
+      "parameters": [],
+      "start": 1668695103503,
+      "stop": 1668695103815
+    }
+  ],
+  "attachments": [],
+  "parameters": [],
+  "start": 1668695103502,
+  "stop": 1668695103824
+}

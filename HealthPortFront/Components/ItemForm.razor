@@ -1,0 +1,120 @@
+@using Newtonsoft.Json;
+@inject IConfiguration configuration
+@inject HttpClient http
+@inject NavigationManager NM
+
+<form>
+  <div class="form-group">
+    <label for="fnln">Имя и фамилия клиента</label>
+    <input type="text" class="form-control" id="fnln" aria-describedby="fnln" placeholder="Имя и фамилия" required
+    @bind="fnln">
+  </div>
+
+  <div class="form-group">
+    <label for="shortProblem">Описание жалобы</label>
+    <input type="text" class="form-control" id="claim" aria-describedby="claim" placeholder="Описание жалобы" required
+    @bind="item.claim">
+  </div>
+
+  <div class="form-group">
+    <label for="phoneNumber">Номер телефона</label>
+    <input type="text" class="form-control" id="phoneNumber" aria-describedby="phoneNumber" placeholder="Номер телефона" required
+    @bind="item.phoneNumber">
+  </div>
+
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input type="email" class="form-control" id="email" aria-describedby="email" placeholder="Enter email" required
+    @bind="item.email">
+  </div>
+
+  <div class="form-group">
+    <label for="fullProblem">Детальное описание жалобы</label>
+    <textarea class="form-control" id="claim_details" rows="5" required
+    @bind="item.claim_details">
+    </textarea>
+  </div>
+
+    <div class="form-group">
+        <label for="age">Возраст</label>
+        <input type="text" class="form-control" id="age" aria-describedby="age" placeholder="18" required
+        @bind="item.age">
+    </div>
+
+    <div class="form-group">
+        <label for="priceusd">Страховое возмещение в USD</label>
+        <input type="text" class="form-control" id="priceusd" aria-describedby="priceusd" placeholder="200"
+        @bind="item.priceusd">
+    </div>
+
+    <div class="form-group">
+        <label for="course">Курс</label>
+        <input type="text" class="form-control" id="course" aria-describedby="course" placeholder="19.99" readonly
+        @bind="item.course">
+    </div>
+
+    <div class="form-group">
+        <label for="priceuah">Страховое возмещение в UAH</label>
+        <input type="text" class="form-control" id="priceuah" aria-describedby="priceuah" placeholder="1998" readonly
+        value="@calculatePriceUAH()">
+    </div>
+
+  <button type="submit" class="btn btn-primary sendbtn" @onclick="submitForm" @onclick:preventDefault>Submit</button>
+</form>
+
+<div class="alert alert-danger" role="alert" style="margin-top: 20px; @displayStyleAge">
+  Возраст должен быть более 18 лет!
+</div>
+
+<div class="alert alert-danger" role="alert" style="margin-top: 20px; @displayStyleUSD">
+  Сумма должна быть больше нуля
+</div>
+
+@code 
+{
+  Item? item;
+  string? fnln;
+  Course? course;
+  string? displayStyleAge;
+  string? displayStyleUSD;
+
+  protected override void OnInitialized() {
+    this.item = new Item();
+    displayStyleAge = displayStyleUSD = "display: none";
+  }
+
+  protected override async Task OnInitializedAsync() {
+     String jsonString = await http.GetStringAsync(configuration["backServer"] + "/getcourse");
+     this.course = JsonConvert.DeserializeObject<Course>(jsonString);
+
+      this.item.course = this.course.course;
+      calculatePriceUAH();
+  }
+
+  public float calculatePriceUAH() {
+    this.item.priceuah = this.item.priceusd * this.item.course;
+    return this.item.priceuah;
+  }
+
+  protected async Task submitForm() {
+    displayStyleAge = displayStyleUSD = "display: none";
+    
+    if (this.item.age < 18) 
+    {
+      displayStyleAge = "display: block";
+      return;
+    }
+
+    if (this.item.priceusd < 0) 
+    {
+      displayStyleUSD = "display: block";
+      return;
+    }
+
+    string[] clientFNLN = this.fnln.Split(" ");
+    this.item.firstName = clientFNLN[0];
+    this.item.lastName = clientFNLN[1];
+    await http.PostAsJsonAsync(configuration["backServer"] + "/register", this.item);
+    NM.NavigateTo("/schedule");
+  }
+}

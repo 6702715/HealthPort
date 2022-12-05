@@ -1,0 +1,48 @@
+{
+  "uuid": "90b7d749-6374-4df5-a860-5656f9cc1788-tc-0-1000",
+  "name": "nopCommerceLogIn.Tests.Login",
+  "children": [
+    "7f8001c7-32b5-42e9-a17b-29fe13aba6b4-tr-0-1001"
+  ],
+  "befores": [
+    {
+      "name": "Setup",
+      "status": "failed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false,
+        "message": "OpenQA.Selenium.DriverServiceNotFoundException : The msedgedriver file does not exist in the current directory or in a directory on the PATH environment variable. The driver can be downloaded at https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/.\nTearDown : System.NullReferenceException : Object reference not set to an instance of an object.",
+        "trace": "   at OpenQA.Selenium.DriverService.FindDriverServiceExecutable(String executableName, Uri downloadUrl)\n   at OpenQA.Selenium.Edge.EdgeDriverService.CreateDefaultService()\n   at OpenQA.Selenium.Edge.EdgeDriver..ctor(EdgeOptions options)\n   at OpenQA.Selenium.Edge.EdgeDriver..ctor()\n   at nopCommerceLogIn.Tests.Setup() in /home/user/Projects/nopCommerceLogIn/UnitTest1.cs:line 21\n--TearDown\n   at nopCommerceLogIn.Tests.endTests() in /home/user/Projects/nopCommerceLogIn/UnitTest1.cs:line 50"
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1669021529728,
+      "stop": 1669021529728
+    }
+  ],
+  "afters": [
+    {
+      "name": "endTests",
+      "status": "failed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false,
+        "message": "OpenQA.Selenium.DriverServiceNotFoundException : The msedgedriver file does not exist in the current directory or in a directory on the PATH environment variable. The driver can be downloaded at https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/.\nTearDown : System.NullReferenceException : Object reference not set to an instance of an object.",
+        "trace": "   at OpenQA.Selenium.DriverService.FindDriverServiceExecutable(String executableName, Uri downloadUrl)\n   at OpenQA.Selenium.Edge.EdgeDriverService.CreateDefaultService()\n   at OpenQA.Selenium.Edge.EdgeDriver..ctor(EdgeOptions options)\n   at OpenQA.Selenium.Edge.EdgeDriver..ctor()\n   at nopCommerceLogIn.Tests.Setup() in /home/user/Projects/nopCommerceLogIn/UnitTest1.cs:line 21\n--TearDown\n   at nopCommerceLogIn.Tests.endTests() in /home/user/Projects/nopCommerceLogIn/UnitTest1.cs:line 50"
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1669021529730,
+      "stop": 1669021529730
+    }
+  ],
+  "links": [],
+  "start": 1669021529320,
+  "stop": 1669021529809
+}

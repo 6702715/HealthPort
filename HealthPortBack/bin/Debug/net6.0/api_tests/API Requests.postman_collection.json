@@ -1,0 +1,198 @@
+{
+	"info": {
+		"_postman_id": "af05367f-ee30-44eb-9d2f-4efcb53e322a",
+		"name": "API Requests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Post new Item",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {\r",
+							"    pm.expect(pm.response.code).to.be.oneOf([201, 202]);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t   \"firstName\": \"Alex\",\r\n\t   \"lastName\": \"Petrov\",\r\n\t   \"claim\": \"My problem\",\r\n\t   \"phoneNumber\": \"+30 (727) 827-6534\",\r\n\t   \"email\": \"6702727@gmail.com\",\r\n\t   \"claimdetails\": \"aaabbbcccddd\",\r\n\t   \"age\": 35,\r\n\t   \"priceusd\": 39.5,\r\n\t   \"course\": 39.5,\r\n\t   \"priceuah\": 900\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{HOST}}:{{PORT}}/register",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "{{PORT}}",
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Items",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response time is less than 200ms\", () => {\r",
+							"  pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Content test\", function () {\r",
+							"    var lnft = pm.variables.get('lastNameForTest');\r",
+							"    pm.expect(pm.response.text()).to.include(lnft);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{HOST}}:{{PORT}}/register",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "{{PORT}}",
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get course",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response time is less than 200ms\", () => {\r",
+							"  pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Test currency value\", function () {\r",
+							"     var jsondata = pm.response.json();\r",
+							"    pm.expect(jsondata.currency).to.eql(\"USD\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{HOST}}:{{PORT}}/getcourse",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "{{PORT}}",
+					"path": [
+						"getcourse"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post new feedback",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Access-Control-Allow-Origin is present\", function () {\r",
+							"    pm.response.to.have.header(\"Access-Control-Allow-Origin\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"function randomString(length=1) {\r",
+							"    let randomString = \"\";\r",
+							"    for (let i = 0; i < length; i++){\r",
+							"        randomString += pm.variables.replaceIn(\"{{$randomAlphaNumeric}}\");\r",
+							"    }\r",
+							"    return randomString;\r",
+							"}\r",
+							"\r",
+							"STRING_LEN = 200\r",
+							"pm.variables.set('randomString', randomString(STRING_LEN));\r",
+							"\r",
+							"const uuid = require('uuid')\r",
+							"let email=uuid()+'@domain.com'\r",
+							"pm.environment.set('randomEmail',email)\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"{{randomEmail}}\",\r\n    \"msgText\": \"{{randomString}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{HOST}}:{{PORT}}/feedback",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "{{PORT}}",
+					"path": [
+						"feedback"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

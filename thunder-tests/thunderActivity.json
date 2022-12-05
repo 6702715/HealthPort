@@ -1,0 +1,16 @@
+[
+  {
+    "_id": "233cb9d6-4742-4e17-ba10-6a20f302a79a",
+    "colId": "history",
+    "containerId": "",
+    "name": "https://192.168.56.3:7020/getcourse",
+    "url": "http://192.168.56.3:7020/getcourse",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2022-10-28T12:25:28.752Z",
+    "modified": "2022-10-28T12:38:32.130Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  }
+]

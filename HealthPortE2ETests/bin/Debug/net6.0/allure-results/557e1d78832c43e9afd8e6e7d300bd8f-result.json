@@ -1,0 +1,72 @@
+{
+  "uuid": "7f8001c7-32b5-42e9-a17b-29fe13aba6b4-tr-0-1001",
+  "historyId": "nopCommerceLogIn.Tests.Login",
+  "fullName": "nopCommerceLogIn.Tests.Login",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "NonParallelWorker"
+    },
+    {
+      "name": "host",
+      "value": "ubuntu-qa3"
+    },
+    {
+      "name": "package",
+      "value": "nopCommerceLogIn"
+    },
+    {
+      "name": "testMethod",
+      "value": "Login"
+    },
+    {
+      "name": "testClass",
+      "value": "Tests"
+    },
+    {
+      "name": "suite",
+      "value": "LoginTest"
+    }
+  ],
+  "links": [],
+  "name": "Login",
+  "status": "failed",
+  "statusDetails": {
+    "known": false,
+    "muted": false,
+    "flaky": false,
+    "message": "OpenQA.Selenium.DriverServiceNotFoundException : The msedgedriver file does not exist in the current directory or in a directory on the PATH environment variable. The driver can be downloaded at https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/.\nTearDown : System.NullReferenceException : Object reference not set to an instance of an object.",
+    "trace": "   at OpenQA.Selenium.DriverService.FindDriverServiceExecutable(String executableName, Uri downloadUrl)\n   at OpenQA.Selenium.Edge.EdgeDriverService.CreateDefaultService()\n   at OpenQA.Selenium.Edge.EdgeDriver..ctor(EdgeOptions options)\n   at OpenQA.Selenium.Edge.EdgeDriver..ctor()\n   at nopCommerceLogIn.Tests.Setup() in /home/user/Projects/nopCommerceLogIn/UnitTest1.cs:line 21\n--TearDown\n   at nopCommerceLogIn.Tests.endTests() in /home/user/Projects/nopCommerceLogIn/UnitTest1.cs:line 50"
+  },
+  "stage": "finished",
+  "description": "\nSetup SetUp method failed\n\nendTests TearDown method failed\n",
+  "steps": [
+    {
+      "name": "Login skipped because of Setup failure",
+      "status": "skipped",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false,
+        "message": "OpenQA.Selenium.DriverServiceNotFoundException : The msedgedriver file does not exist in the current directory or in a directory on the PATH environment variable. The driver can be downloaded at https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/.\nTearDown : System.NullReferenceException : Object reference not set to an instance of an object.",
+        "trace": "   at OpenQA.Selenium.DriverService.FindDriverServiceExecutable(String executableName, Uri downloadUrl)\n   at OpenQA.Selenium.Edge.EdgeDriverService.CreateDefaultService()\n   at OpenQA.Selenium.Edge.EdgeDriver..ctor(EdgeOptions options)\n   at OpenQA.Selenium.Edge.EdgeDriver..ctor()\n   at nopCommerceLogIn.Tests.Setup() in /home/user/Projects/nopCommerceLogIn/UnitTest1.cs:line 21\n--TearDown\n   at nopCommerceLogIn.Tests.endTests() in /home/user/Projects/nopCommerceLogIn/UnitTest1.cs:line 50"
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [
+        {
+          "name": "Console Output",
+          "source": "7bd034c2ff8045ee9a89d9a0001d2e6f-attachment.txt",
+          "type": "text/plain"
+        }
+      ],
+      "parameters": [],
+      "start": 1669021529324,
+      "stop": 1669021529732
+    }
+  ],
+  "attachments": [],
+  "parameters": [],
+  "start": 1669021529323,
+  "stop": 1669021529742
+}

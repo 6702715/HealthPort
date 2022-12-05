@@ -1,0 +1,67 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = browser
+build_property.EnableSingleFileAnalyzer = 
+build_property.EnableTrimAnalyzer = true
+build_property.IncludeAllContentForSelfExtract = 
+build_property.RootNamespace = HealthPortFront
+build_property.RootNamespace = HealthPortFront
+build_property.ProjectDir = /home/user/Projects/HealthPort/HealthPortFront/
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = /home/user/Projects/HealthPort/HealthPortFront
+build_property._RazorSourceGeneratorDebug = 
+
+[/home/user/Projects/HealthPort/HealthPortFront/App.razor]
+build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/user/Projects/HealthPort/HealthPortFront/Components/Feedback.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9GZWVkYmFjay5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/user/Projects/HealthPort/HealthPortFront/Components/ItemForm.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9JdGVtRm9ybS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/user/Projects/HealthPort/HealthPortFront/Components/List.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9MaXN0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/user/Projects/HealthPort/HealthPortFront/Pages/About.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWJvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/user/Projects/HealthPort/HealthPortFront/Pages/Booking.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQm9va2luZy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/user/Projects/HealthPort/HealthPortFront/Pages/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvSW5kZXgucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/user/Projects/HealthPort/HealthPortFront/Pages/Schedule.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2NoZWR1bGUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/user/Projects/HealthPort/HealthPortFront/Shared/Footer.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkL0Zvb3Rlci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/user/Projects/HealthPort/HealthPortFront/Shared/Header.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkL0hlYWRlci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/user/Projects/HealthPort/HealthPortFront/Shared/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkL01haW5MYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/user/Projects/HealthPort/HealthPortFront/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
