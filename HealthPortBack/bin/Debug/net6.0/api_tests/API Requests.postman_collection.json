@@ -2,7 +2,8 @@
 	"info": {
 		"_postman_id": "af05367f-ee30-44eb-9d2f-4efcb53e322a",
 		"name": "API Requests",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23877497"
 	},
 	"item": [
 		{
@@ -25,7 +26,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n\t   \"firstName\": \"Alex\",\r\n\t   \"lastName\": \"Petrov\",\r\n\t   \"claim\": \"My problem\",\r\n\t   \"phoneNumber\": \"+30 (727) 827-6534\",\r\n\t   \"email\": \"6702727@gmail.com\",\r\n\t   \"claimdetails\": \"aaabbbcccddd\",\r\n\t   \"age\": 35,\r\n\t   \"priceusd\": 39.5,\r\n\t   \"course\": 39.5,\r\n\t   \"priceuah\": 900\r\n}\r\n",
+					"raw": "{\r\n\t   \"firstName\": \"Alex\",\r\n\t   \"lastName\": \"Petrov2\",\r\n\t   \"claim\": \"My problem\",\r\n\t   \"phoneNumber\": \"+30 (727) 827-6534\",\r\n\t   \"email\": \"6702727@gmail.com\",\r\n\t   \"claim_details\": \"aaabbbcccddd\",\r\n\t   \"age\": 35,\r\n\t   \"priceusd\": 39.5,\r\n\t   \"course\": 39.5,\r\n\t   \"priceuah\": 900\r\n}\r\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -96,8 +97,8 @@
 							"    pm.response.to.have.status(200);\r",
 							"});\r",
 							"\r",
-							"pm.test(\"Response time is less than 200ms\", () => {\r",
-							"  pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"pm.test(\"Response time is less than 500ms\", () => {\r",
+							"  pm.expect(pm.response.responseTime).to.be.below(500);\r",
 							"});\r",
 							"\r",
 							"pm.test(\"Test currency value\", function () {\r",

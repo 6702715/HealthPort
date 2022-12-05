@@ -80,7 +80,7 @@ public class Tests
             {
                 IWebElement? fnlnField1 = this.driver?.FindElement(By.Id("fnln"));
                 fnlnField1.Clear();
-                fnlnField1.SendKeys("Alex Blob");
+                fnlnField1.SendKeys("Alex Brokovski");
             }
             catch
             {
@@ -89,15 +89,16 @@ public class Tests
             break;
             i++;
         }
+
+        Thread.Sleep(1000);
+        IWebElement? fnlnField = this.driver?.FindElement(By.Id("fnln"));
+        fnlnField.Clear();
+        fnlnField.SendKeys("Alex Brokovski");
+
         Thread.Sleep(1000);
         IWebElement? uniField = this.driver?.FindElement(By.Id("claim"));
         uniField.Clear();
         uniField.SendKeys("aa bb cc");
-
-        Thread.Sleep(1000);
-        IWebElement? fnlnField = this.driver?.FindElement(By.Id("fnln"));
-        //fnlnField.Clear();
-        fnlnField.SendKeys("Alex Blob");
 
         Thread.Sleep(1000);
         IWebElement? phoneField = this.driver?.FindElement(By.Id("phoneNumber"));
@@ -173,7 +174,7 @@ public class Tests
             {
                 IWebElement? fnlnField1 = this.driver?.FindElement(By.Id("fnln"));
                 fnlnField1.Clear();
-                fnlnField1.SendKeys("Alex Blob");
+                fnlnField1.SendKeys("Boby Volkov");
             }
             catch
             {
@@ -182,15 +183,18 @@ public class Tests
             break;
             i++;
         }
+
+        Thread.Sleep(1000);
+        IWebElement? fnlnField = this.driver?.FindElement(By.Id("fnln"));
+        fnlnField.Clear();
+        fnlnField.SendKeys("Boby Volkov");
+
         Thread.Sleep(1000);
         IWebElement? uniField = this.driver?.FindElement(By.Id("claim"));
         uniField.Clear();
         uniField.SendKeys("aa bb cc");
 
-        Thread.Sleep(1000);
-        IWebElement? fnlnField = this.driver?.FindElement(By.Id("fnln"));
-        fnlnField.Clear();
-        fnlnField.SendKeys("Alex Blob");
+
 
         Thread.Sleep(1000);
         IWebElement? phoneField = this.driver?.FindElement(By.Id("phoneNumber"));

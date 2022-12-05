@@ -1,11 +1,12 @@
 {
   "collection": {
     "_": {
-      "postman_id": "af05367f-ee30-44eb-9d2f-4efcb53e322a"
+      "postman_id": "af05367f-ee30-44eb-9d2f-4efcb53e322a",
+      "exporter_id": "23877497"
     },
     "item": [
       {
-        "id": "da7991eb-d6a5-4116-b9f4-8fb4f6c43aad",
+        "id": "3e687ec8-63e2-4dce-8224-658ab51a221e",
         "name": "Post new Item",
         "request": {
           "url": {
@@ -22,7 +23,7 @@
           "method": "POST",
           "body": {
             "mode": "raw",
-            "raw": "{\r\n\t   \"firstName\": \"Alex\",\r\n\t   \"lastName\": \"Petrov\",\r\n\t   \"claim\": \"My problem\",\r\n\t   \"phoneNumber\": \"+30 (727) 827-6534\",\r\n\t   \"email\": \"6702727@gmail.com\",\r\n\t   \"claimdetails\": \"aaabbbcccddd\",\r\n\t   \"age\": 35,\r\n\t   \"priceusd\": 39.5,\r\n\t   \"course\": 39.5,\r\n\t   \"priceuah\": 900\r\n}\r\n",
+            "raw": "{\r\n\t   \"firstName\": \"Alex\",\r\n\t   \"lastName\": \"Petrov2\",\r\n\t   \"claim\": \"My problem\",\r\n\t   \"phoneNumber\": \"+30 (727) 827-6534\",\r\n\t   \"email\": \"6702727@gmail.com\",\r\n\t   \"claim_details\": \"aaabbbcccddd\",\r\n\t   \"age\": 35,\r\n\t   \"priceusd\": 39.5,\r\n\t   \"course\": 39.5,\r\n\t   \"priceuah\": 900\r\n}\r\n",
             "options": {
               "raw": {
                 "language": "json"
@@ -35,20 +36,20 @@
           {
             "listen": "test",
             "script": {
-              "id": "8f03cda8-c666-43bd-80a8-52ba2d8c5f52",
+              "id": "77830938-401d-4de0-a147-b4820b7f0019",
               "type": "text/javascript",
               "exec": [
                 "pm.test(\"Successful POST request\", function () {\r",
                 "    pm.expect(pm.response.code).to.be.oneOf([201, 202]);\r",
                 "});"
               ],
-              "_lastExecutionId": "12b549d0-017f-475c-980a-f636128ad703"
+              "_lastExecutionId": "91a0e745-aae9-4d5e-b8d7-05c851b6d393"
             }
           }
         ]
       },
       {
-        "id": "75609b43-92be-492f-b5bc-56d4f6b361b5",
+        "id": "07d8c976-4e00-4efc-bcf8-29b66e665a5d",
         "name": "Get Items",
         "request": {
           "url": {
@@ -69,7 +70,7 @@
           {
             "listen": "test",
             "script": {
-              "id": "324df91e-a001-4e12-8337-d9fe818c7bd2",
+              "id": "aac48b04-09e8-4d04-a15b-d273ea221401",
               "type": "text/javascript",
               "exec": [
                 "pm.test(\"Status test\", function () {\r",
@@ -85,13 +86,13 @@
                 "    pm.expect(pm.response.text()).to.include(lnft);\r",
                 "});"
               ],
-              "_lastExecutionId": "bcac8527-0a93-4d31-acda-721b3821f30d"
+              "_lastExecutionId": "8d19cab4-a4e3-4e50-8784-5bed427be010"
             }
           }
         ]
       },
       {
-        "id": "2be47eaa-4edd-4129-8ad2-109a0c2df94e",
+        "id": "e7995744-3115-4ad6-8be4-461bc58e2f18",
         "name": "Get course",
         "request": {
           "url": {
@@ -112,15 +113,15 @@
           {
             "listen": "test",
             "script": {
-              "id": "ea7182da-1937-4408-b960-78dcdf2d94c4",
+              "id": "ca659a3e-0860-4687-b9e2-b886cbe384b5",
               "type": "text/javascript",
               "exec": [
                 "pm.test(\"Status test\", function () {\r",
                 "    pm.response.to.have.status(200);\r",
                 "});\r",
                 "\r",
-                "pm.test(\"Response time is less than 200ms\", () => {\r",
-                "  pm.expect(pm.response.responseTime).to.be.below(200);\r",
+                "pm.test(\"Response time is less than 500ms\", () => {\r",
+                "  pm.expect(pm.response.responseTime).to.be.below(500);\r",
                 "});\r",
                 "\r",
                 "pm.test(\"Test currency value\", function () {\r",
@@ -128,13 +129,13 @@
                 "    pm.expect(jsondata.currency).to.eql(\"USD\");\r",
                 "});"
               ],
-              "_lastExecutionId": "bd154824-93b1-4c8b-b203-3e6ddb3371be"
+              "_lastExecutionId": "39831ae4-bdb9-45fa-9be4-142b70c8cc38"
             }
           }
         ]
       },
       {
-        "id": "b819bbfd-0925-436e-83f2-bf28b1aa9c5c",
+        "id": "afbf2f1e-a160-4d2c-b0c5-c9adc8cd8ac6",
         "name": "Post new feedback",
         "request": {
           "url": {
@@ -164,7 +165,7 @@
           {
             "listen": "test",
             "script": {
-              "id": "fd213446-63df-40ee-9c8e-cb89ba62bf53",
+              "id": "d810a9ac-534e-42e0-a51a-136819dc3074",
               "type": "text/javascript",
               "exec": [
                 "pm.test(\"Status test\", function () {\r",
@@ -175,13 +176,13 @@
                 "    pm.response.to.have.header(\"Access-Control-Allow-Origin\");\r",
                 "});"
               ],
-              "_lastExecutionId": "73da548e-e221-4581-bffa-d1e7fbfdfb0d"
+              "_lastExecutionId": "18240e8d-4e63-49df-83e6-08ff0db8e099"
             }
           },
           {
             "listen": "prerequest",
             "script": {
-              "id": "470893db-45b9-4d2a-8c4a-baad033ef0ef",
+              "id": "f58598b7-e35b-40a9-ba23-e99bfead4ebf",
               "type": "text/javascript",
               "exec": [
                 "function randomString(length=1) {\r",
@@ -202,7 +203,7 @@
                 "\r",
                 ""
               ],
-              "_lastExecutionId": "24721287-94bb-4447-a5d4-d30d0cba707d"
+              "_lastExecutionId": "79362094-db15-4937-96ca-678023b382c8"
             }
           }
         ]
@@ -219,7 +220,7 @@
   "environment": {
     "_": {
       "postman_variable_scope": "environment",
-      "postman_exported_at": "2022-12-02T13:20:16.697Z",
+      "postman_exported_at": "2022-12-05T09:45:35.544Z",
       "postman_exported_using": "Postman/10.5.7"
     },
     "id": "944d0718-0ce0-43ad-9943-12d5677a528b",
@@ -237,7 +238,7 @@
       },
       {
         "type": "any",
-        "value": "6344c5c8-a0d6-46d5-b920-e480d7968f56@domain.com",
+        "value": "b4a879ea-7f07-4241-a9f1-8a18d9230e8f@domain.com",
         "key": "randomEmail"
       },
       {
@@ -248,7 +249,7 @@
     ]
   },
   "globals": {
-    "id": "28e2454f-616f-4d19-b894-0132fe89f278",
+    "id": "e7691f47-6fca-4f4c-9642-8ca7c8cdf465",
     "values": []
   },
   "run": {
@@ -300,10 +301,10 @@
       }
     },
     "timings": {
-      "responseAverage": 109.5,
-      "responseMin": 32,
-      "responseMax": 245,
-      "responseSd": 80.7604482404599,
+      "responseAverage": 115.75,
+      "responseMin": 17,
+      "responseMax": 316,
+      "responseSd": 119.70249579687133,
       "dnsAverage": 0,
       "dnsMin": 0,
       "dnsMax": 0,
@@ -312,8 +313,8 @@
       "firstByteMin": 0,
       "firstByteMax": 0,
       "firstByteSd": 0,
-      "started": 1669988249202,
-      "completed": 1669988250250
+      "started": 1670237542762,
+      "completed": 1670237543694
     },
     "executions": [
       {
@@ -326,11 +327,11 @@
           "eof": false,
           "bof": true,
           "cr": false,
-          "ref": "f07a254a-d21e-4ca0-a077-e2edd357343b",
-          "httpRequestId": "f4c0544d-8e66-438b-8c9f-265403738c20"
+          "ref": "1a1ae9ea-504e-4471-962f-608874ca04a4",
+          "httpRequestId": "98d70645-f5cd-455f-b508-10f7a08d5d71"
         },
         "item": {
-          "id": "da7991eb-d6a5-4116-b9f4-8fb4f6c43aad",
+          "id": "3e687ec8-63e2-4dce-8224-658ab51a221e",
           "name": "Post new Item",
           "request": {
             "url": {
@@ -347,7 +348,7 @@
             "method": "POST",
             "body": {
               "mode": "raw",
-              "raw": "{\r\n\t   \"firstName\": \"Alex\",\r\n\t   \"lastName\": \"Petrov\",\r\n\t   \"claim\": \"My problem\",\r\n\t   \"phoneNumber\": \"+30 (727) 827-6534\",\r\n\t   \"email\": \"6702727@gmail.com\",\r\n\t   \"claimdetails\": \"aaabbbcccddd\",\r\n\t   \"age\": 35,\r\n\t   \"priceusd\": 39.5,\r\n\t   \"course\": 39.5,\r\n\t   \"priceuah\": 900\r\n}\r\n",
+              "raw": "{\r\n\t   \"firstName\": \"Alex\",\r\n\t   \"lastName\": \"Petrov2\",\r\n\t   \"claim\": \"My problem\",\r\n\t   \"phoneNumber\": \"+30 (727) 827-6534\",\r\n\t   \"email\": \"6702727@gmail.com\",\r\n\t   \"claim_details\": \"aaabbbcccddd\",\r\n\t   \"age\": 35,\r\n\t   \"priceusd\": 39.5,\r\n\t   \"course\": 39.5,\r\n\t   \"priceuah\": 900\r\n}\r\n",
               "options": {
                 "raw": {
                   "language": "json"
@@ -360,14 +361,14 @@
             {
               "listen": "test",
               "script": {
-                "id": "8f03cda8-c666-43bd-80a8-52ba2d8c5f52",
+                "id": "77830938-401d-4de0-a147-b4820b7f0019",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(\"Successful POST request\", function () {\r",
                   "    pm.expect(pm.response.code).to.be.oneOf([201, 202]);\r",
                   "});"
                 ],
-                "_lastExecutionId": "12b549d0-017f-475c-980a-f636128ad703"
+                "_lastExecutionId": "91a0e745-aae9-4d5e-b8d7-05c851b6d393"
               }
             }
           ]
@@ -411,7 +412,7 @@
             },
             {
               "key": "Postman-Token",
-              "value": "57013fac-0d88-4dc6-9601-ea83aaf7d4ca",
+              "value": "c46e8558-e4c3-4b69-ba8a-a0520bd5074e",
               "system": true
             },
             {
@@ -431,14 +432,14 @@
             },
             {
               "key": "Content-Length",
-              "value": "282",
+              "value": "284",
               "system": true
             }
           ],
           "method": "POST",
           "body": {
             "mode": "raw",
-            "raw": "{\r\n\t   \"firstName\": \"Alex\",\r\n\t   \"lastName\": \"Petrov\",\r\n\t   \"claim\": \"My problem\",\r\n\t   \"phoneNumber\": \"+30 (727) 827-6534\",\r\n\t   \"email\": \"6702727@gmail.com\",\r\n\t   \"claimdetails\": \"aaabbbcccddd\",\r\n\t   \"age\": 35,\r\n\t   \"priceusd\": 39.5,\r\n\t   \"course\": 39.5,\r\n\t   \"priceuah\": 900\r\n}\r\n",
+            "raw": "{\r\n\t   \"firstName\": \"Alex\",\r\n\t   \"lastName\": \"Petrov2\",\r\n\t   \"claim\": \"My problem\",\r\n\t   \"phoneNumber\": \"+30 (727) 827-6534\",\r\n\t   \"email\": \"6702727@gmail.com\",\r\n\t   \"claim_details\": \"aaabbbcccddd\",\r\n\t   \"age\": 35,\r\n\t   \"priceusd\": 39.5,\r\n\t   \"course\": 39.5,\r\n\t   \"priceuah\": 900\r\n}\r\n",
             "options": {
               "raw": {
                 "language": "json"
@@ -447,7 +448,7 @@
           }
         },
         "response": {
-          "id": "23853f6a-bf0f-438f-bd10-0272c2a9f400",
+          "id": "915366d8-8420-459d-bba6-8628d558922b",
           "status": "Created",
           "code": 201,
           "header": [
@@ -457,7 +458,7 @@
             },
             {
               "key": "Date",
-              "value": "Fri, 02 Dec 2022 13:37:29 GMT"
+              "value": "Mon, 05 Dec 2022 10:52:22 GMT"
             },
             {
               "key": "Server",
@@ -485,10 +486,10 @@
             ]
           },
           "cookie": [],
-          "responseTime": 245,
+          "responseTime": 316,
           "responseSize": 7
         },
-        "id": "da7991eb-d6a5-4116-b9f4-8fb4f6c43aad",
+        "id": "3e687ec8-63e2-4dce-8224-658ab51a221e",
         "assertions": [
           {
             "assertion": "Successful POST request",
@@ -498,15 +499,15 @@
       },
       {
         "cursor": {
-          "ref": "06eca488-ce5b-4c17-ac62-922cd19a25ce",
+          "ref": "059cde61-b0f8-4a2c-8f65-085acb0c2950",
           "length": 4,
           "cycles": 1,
           "position": 1,
           "iteration": 0,
-          "httpRequestId": "bb4e5f6a-cf7e-4a1a-8e03-a15b52d12c7d"
+          "httpRequestId": "fb7fb9bf-2e69-45c1-bdc9-bb4e16250101"
         },
         "item": {
-          "id": "75609b43-92be-492f-b5bc-56d4f6b361b5",
+          "id": "07d8c976-4e00-4efc-bcf8-29b66e665a5d",
           "name": "Get Items",
           "request": {
             "url": {
@@ -527,7 +528,7 @@
             {
               "listen": "test",
               "script": {
-                "id": "324df91e-a001-4e12-8337-d9fe818c7bd2",
+                "id": "aac48b04-09e8-4d04-a15b-d273ea221401",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(\"Status test\", function () {\r",
@@ -543,7 +544,7 @@
                   "    pm.expect(pm.response.text()).to.include(lnft);\r",
                   "});"
                 ],
-                "_lastExecutionId": "bcac8527-0a93-4d31-acda-721b3821f30d"
+                "_lastExecutionId": "8d19cab4-a4e3-4e50-8784-5bed427be010"
               }
             }
           ]
@@ -582,7 +583,7 @@
             },
             {
               "key": "Postman-Token",
-              "value": "e0f21165-0a72-4ca1-9139-e16e63e07c1a",
+              "value": "70a938d8-7ca6-45d9-a344-aca0b59164bf",
               "system": true
             },
             {
@@ -604,7 +605,7 @@
           "method": "GET"
         },
         "response": {
-          "id": "33eda73f-3e42-4601-8872-c0fe3e6f7e1f",
+          "id": "1d87ac79-507f-44c5-97b2-973f4bc0d5f1",
           "status": "OK",
           "code": 200,
           "header": [
@@ -614,7 +615,7 @@
             },
             {
               "key": "Date",
-              "value": "Fri, 02 Dec 2022 13:37:29 GMT"
+              "value": "Mon, 05 Dec 2022 10:52:22 GMT"
             },
             {
               "key": "Server",
@@ -21003,14 +21004,696 @@
               48,
               34,
               125,
+              44,
+              123,
+              34,
+              105,
+              100,
+              34,
+              58,
+              34,
+              53,
+              49,
+              50,
+              52,
+              34,
+              44,
+              34,
+              102,
+              105,
+              114,
+              115,
+              116,
+              78,
+              97,
+              109,
+              101,
+              34,
+              58,
+              34,
+              65,
+              108,
+              101,
+              120,
+              34,
+              44,
+              34,
+              108,
+              97,
+              115,
+              116,
+              78,
+              97,
+              109,
+              101,
+              34,
+              58,
+              34,
+              66,
+              108,
+              111,
+              98,
+              34,
+              44,
+              34,
+              99,
+              108,
+              97,
+              105,
+              109,
+              34,
+              58,
+              34,
+              97,
+              97,
+              32,
+              98,
+              98,
+              32,
+              99,
+              99,
+              34,
+              44,
+              34,
+              112,
+              104,
+              111,
+              110,
+              101,
+              78,
+              117,
+              109,
+              98,
+              101,
+              114,
+              34,
+              58,
+              34,
+              34,
+              44,
+              34,
+              101,
+              109,
+              97,
+              105,
+              108,
+              34,
+              58,
+              34,
+              117,
+              115,
+              101,
+              114,
+              64,
+              103,
+              109,
+              97,
+              105,
+              108,
+              46,
+              99,
+              111,
+              109,
+              34,
+              44,
+              34,
+              99,
+              108,
+              97,
+              105,
+              109,
+              95,
+              100,
+              101,
+              116,
+              97,
+              105,
+              108,
+              115,
+              34,
+              58,
+              34,
+              32,
+              97,
+              97,
+              97,
+              32,
+              98,
+              98,
+              98,
+              32,
+              99,
+              99,
+              99,
+              32,
+              100,
+              100,
+              100,
+              34,
+              44,
+              34,
+              97,
+              103,
+              101,
+              34,
+              58,
+              34,
+              53,
+              48,
+              34,
+              44,
+              34,
+              112,
+              114,
+              105,
+              99,
+              101,
+              117,
+              115,
+              100,
+              34,
+              58,
+              34,
+              50,
+              48,
+              46,
+              48,
+              48,
+              34,
+              44,
+              34,
+              99,
+              111,
+              117,
+              114,
+              115,
+              101,
+              34,
+              58,
+              34,
+              50,
+              53,
+              46,
+              55,
+              55,
+              34,
+              44,
+              34,
+              112,
+              114,
+              105,
+              99,
+              101,
+              117,
+              97,
+              104,
+              34,
+              58,
+              34,
+              53,
+              49,
+              53,
+              46,
+              52,
+              48,
+              48,
+              48,
+              34,
+              125,
+              44,
+              123,
+              34,
+              105,
+              100,
+              34,
+              58,
+              34,
+              53,
+              49,
+              50,
+              53,
+              34,
+              44,
+              34,
+              102,
+              105,
+              114,
+              115,
+              116,
+              78,
+              97,
+              109,
+              101,
+              34,
+              58,
+              34,
+              65,
+              108,
+              101,
+              120,
+              34,
+              44,
+              34,
+              108,
+              97,
+              115,
+              116,
+              78,
+              97,
+              109,
+              101,
+              34,
+              58,
+              34,
+              66,
+              108,
+              111,
+              98,
+              34,
+              44,
+              34,
+              99,
+              108,
+              97,
+              105,
+              109,
+              34,
+              58,
+              34,
+              97,
+              97,
+              32,
+              98,
+              98,
+              32,
+              99,
+              99,
+              34,
+              44,
+              34,
+              112,
+              104,
+              111,
+              110,
+              101,
+              78,
+              117,
+              109,
+              98,
+              101,
+              114,
+              34,
+              58,
+              34,
+              43,
+              51,
+              55,
+              53,
+              51,
+              51,
+              54,
+              55,
+              48,
+              50,
+              55,
+              50,
+              55,
+              34,
+              44,
+              34,
+              101,
+              109,
+              97,
+              105,
+              108,
+              34,
+              58,
+              34,
+              117,
+              115,
+              101,
+              114,
+              64,
+              103,
+              109,
+              97,
+              105,
+              108,
+              46,
+              99,
+              111,
+              109,
+              34,
+              44,
+              34,
+              99,
+              108,
+              97,
+              105,
+              109,
+              95,
+              100,
+              101,
+              116,
+              97,
+              105,
+              108,
+              115,
+              34,
+              58,
+              34,
+              97,
+              97,
+              97,
+              32,
+              98,
+              98,
+              98,
+              32,
+              99,
+              99,
+              99,
+              32,
+              100,
+              100,
+              100,
+              34,
+              44,
+              34,
+              97,
+              103,
+              101,
+              34,
+              58,
+              34,
+              53,
+              48,
+              34,
+              44,
+              34,
+              112,
+              114,
+              105,
+              99,
+              101,
+              117,
+              115,
+              100,
+              34,
+              58,
+              34,
+              50,
+              48,
+              46,
+              48,
+              48,
+              34,
+              44,
+              34,
+              99,
+              111,
+              117,
+              114,
+              115,
+              101,
+              34,
+              58,
+              34,
+              50,
+              53,
+              46,
+              55,
+              55,
+              34,
+              44,
+              34,
+              112,
+              114,
+              105,
+              99,
+              101,
+              117,
+              97,
+              104,
+              34,
+              58,
+              34,
+              53,
+              49,
+              53,
+              46,
+              52,
+              48,
+              48,
+              48,
+              34,
+              125,
+              44,
+              123,
+              34,
+              105,
+              100,
+              34,
+              58,
+              34,
+              54,
+              49,
+              49,
+              53,
+              34,
+              44,
+              34,
+              102,
+              105,
+              114,
+              115,
+              116,
+              78,
+              97,
+              109,
+              101,
+              34,
+              58,
+              34,
+              65,
+              108,
+              101,
+              120,
+              34,
+              44,
+              34,
+              108,
+              97,
+              115,
+              116,
+              78,
+              97,
+              109,
+              101,
+              34,
+              58,
+              34,
+              80,
+              101,
+              116,
+              114,
+              111,
+              118,
+              50,
+              34,
+              44,
+              34,
+              99,
+              108,
+              97,
+              105,
+              109,
+              34,
+              58,
+              34,
+              77,
+              121,
+              32,
+              112,
+              114,
+              111,
+              98,
+              108,
+              101,
+              109,
+              34,
+              44,
+              34,
+              112,
+              104,
+              111,
+              110,
+              101,
+              78,
+              117,
+              109,
+              98,
+              101,
+              114,
+              34,
+              58,
+              34,
+              43,
+              51,
+              48,
+              32,
+              40,
+              55,
+              50,
+              55,
+              41,
+              32,
+              56,
+              50,
+              55,
+              45,
+              54,
+              53,
+              51,
+              52,
+              34,
+              44,
+              34,
+              101,
+              109,
+              97,
+              105,
+              108,
+              34,
+              58,
+              34,
+              54,
+              55,
+              48,
+              50,
+              55,
+              50,
+              55,
+              64,
+              103,
+              109,
+              97,
+              105,
+              108,
+              46,
+              99,
+              111,
+              109,
+              34,
+              44,
+              34,
+              99,
+              108,
+              97,
+              105,
+              109,
+              95,
+              100,
+              101,
+              116,
+              97,
+              105,
+              108,
+              115,
+              34,
+              58,
+              34,
+              97,
+              97,
+              97,
+              98,
+              98,
+              98,
+              99,
+              99,
+              99,
+              100,
+              100,
+              100,
+              34,
+              44,
+              34,
+              97,
+              103,
+              101,
+              34,
+              58,
+              34,
+              51,
+              53,
+              34,
+              44,
+              34,
+              112,
+              114,
+              105,
+              99,
+              101,
+              117,
+              115,
+              100,
+              34,
+              58,
+              34,
+              51,
+              57,
+              46,
+              53,
+              48,
+              34,
+              44,
+              34,
+              99,
+              111,
+              117,
+              114,
+              115,
+              101,
+              34,
+              58,
+              34,
+              51,
+              57,
+              46,
+              53,
+              48,
+              34,
+              44,
+              34,
+              112,
+              114,
+              105,
+              99,
+              101,
+              117,
+              97,
+              104,
+              34,
+              58,
+              34,
+              57,
+              48,
+              48,
+              46,
+              48,
+              48,
+              48,
+              48,
+              34,
+              125,
               93
             ]
           },
           "cookie": [],
-          "responseTime": 32,
-          "responseSize": 20372
+          "responseTime": 17,
+          "responseSize": 21054
         },
-        "id": "75609b43-92be-492f-b5bc-56d4f6b361b5",
+        "id": "07d8c976-4e00-4efc-bcf8-29b66e665a5d",
         "assertions": [
           {
             "assertion": "Status test",
@@ -21028,15 +21711,15 @@
       },
       {
         "cursor": {
-          "ref": "e813b3c4-bdae-41e4-be72-be9175f2ea72",
+          "ref": "e262b2f2-5c75-42b5-b9b0-1f4600770282",
           "length": 4,
           "cycles": 1,
           "position": 2,
           "iteration": 0,
-          "httpRequestId": "8199bcbe-b32d-4b3c-9404-19ed0237ac00"
+          "httpRequestId": "9a044d7b-707b-4dd0-b075-4f1cb43b27da"
         },
         "item": {
-          "id": "2be47eaa-4edd-4129-8ad2-109a0c2df94e",
+          "id": "e7995744-3115-4ad6-8be4-461bc58e2f18",
           "name": "Get course",
           "request": {
             "url": {
@@ -21057,15 +21740,15 @@
             {
               "listen": "test",
               "script": {
-                "id": "ea7182da-1937-4408-b960-78dcdf2d94c4",
+                "id": "ca659a3e-0860-4687-b9e2-b886cbe384b5",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(\"Status test\", function () {\r",
                   "    pm.response.to.have.status(200);\r",
                   "});\r",
                   "\r",
-                  "pm.test(\"Response time is less than 200ms\", () => {\r",
-                  "  pm.expect(pm.response.responseTime).to.be.below(200);\r",
+                  "pm.test(\"Response time is less than 500ms\", () => {\r",
+                  "  pm.expect(pm.response.responseTime).to.be.below(500);\r",
                   "});\r",
                   "\r",
                   "pm.test(\"Test currency value\", function () {\r",
@@ -21073,7 +21756,7 @@
                   "    pm.expect(jsondata.currency).to.eql(\"USD\");\r",
                   "});"
                 ],
-                "_lastExecutionId": "bd154824-93b1-4c8b-b203-3e6ddb3371be"
+                "_lastExecutionId": "39831ae4-bdb9-45fa-9be4-142b70c8cc38"
               }
             }
           ]
@@ -21112,7 +21795,7 @@
             },
             {
               "key": "Postman-Token",
-              "value": "367a972d-4969-48f0-9a0b-5b6349ad4d7d",
+              "value": "189cc808-117e-4d96-83ee-32c600dea693",
               "system": true
             },
             {
@@ -21134,7 +21817,7 @@
           "method": "GET"
         },
         "response": {
-          "id": "ed8138f5-2b09-4f53-a160-38103fa6ce3c",
+          "id": "4f6756d6-fe8c-4f78-81d3-99415418da49",
           "status": "OK",
           "code": 200,
           "header": [
@@ -21144,7 +21827,7 @@
             },
             {
               "key": "Date",
-              "value": "Fri, 02 Dec 2022 13:37:29 GMT"
+              "value": "Mon, 05 Dec 2022 10:52:23 GMT"
             },
             {
               "key": "Server",
@@ -21242,17 +21925,17 @@
             ]
           },
           "cookie": [],
-          "responseTime": 76,
+          "responseTime": 31,
           "responseSize": 77
         },
-        "id": "2be47eaa-4edd-4129-8ad2-109a0c2df94e",
+        "id": "e7995744-3115-4ad6-8be4-461bc58e2f18",
         "assertions": [
           {
             "assertion": "Status test",
             "skipped": false
           },
           {
-            "assertion": "Response time is less than 200ms",
+            "assertion": "Response time is less than 500ms",
             "skipped": false
           },
           {
@@ -21263,15 +21946,15 @@
       },
       {
         "cursor": {
-          "ref": "ccb99435-5059-43e9-99ff-56e90b5001f4",
+          "ref": "41372b34-0c48-46dc-bbfc-233f152afa8c",
           "length": 4,
           "cycles": 1,
           "position": 3,
           "iteration": 0,
-          "httpRequestId": "ac303018-e40c-4c71-9e46-42f16727e124"
+          "httpRequestId": "0719f72f-71a5-4da6-b54d-0919131a5f9d"
         },
         "item": {
-          "id": "b819bbfd-0925-436e-83f2-bf28b1aa9c5c",
+          "id": "afbf2f1e-a160-4d2c-b0c5-c9adc8cd8ac6",
           "name": "Post new feedback",
           "request": {
             "url": {
@@ -21301,7 +21984,7 @@
             {
               "listen": "test",
               "script": {
-                "id": "fd213446-63df-40ee-9c8e-cb89ba62bf53",
+                "id": "d810a9ac-534e-42e0-a51a-136819dc3074",
                 "type": "text/javascript",
                 "exec": [
                   "pm.test(\"Status test\", function () {\r",
@@ -21312,13 +21995,13 @@
                   "    pm.response.to.have.header(\"Access-Control-Allow-Origin\");\r",
                   "});"
                 ],
-                "_lastExecutionId": "73da548e-e221-4581-bffa-d1e7fbfdfb0d"
+                "_lastExecutionId": "18240e8d-4e63-49df-83e6-08ff0db8e099"
               }
             },
             {
               "listen": "prerequest",
               "script": {
-                "id": "470893db-45b9-4d2a-8c4a-baad033ef0ef",
+                "id": "f58598b7-e35b-40a9-ba23-e99bfead4ebf",
                 "type": "text/javascript",
                 "exec": [
                   "function randomString(length=1) {\r",
@@ -21339,7 +22022,7 @@
                   "\r",
                   ""
                 ],
-                "_lastExecutionId": "24721287-94bb-4447-a5d4-d30d0cba707d"
+                "_lastExecutionId": "79362094-db15-4937-96ca-678023b382c8"
               }
             }
           ]
@@ -21383,7 +22066,7 @@
             },
             {
               "key": "Postman-Token",
-              "value": "b7dfe9db-4381-4d45-95ef-f27b3bdff3c8",
+              "value": "e192af26-8db4-4f1c-a94b-cbf98eb6e10e",
               "system": true
             },
             {
@@ -21410,7 +22093,7 @@
           "method": "POST",
           "body": {
             "mode": "raw",
-            "raw": "{\r\n    \"email\": \"6344c5c8-a0d6-46d5-b920-e480d7968f56@domain.com\",\r\n    \"msgText\": \"2wfzgou7nq3xxqhk5e5f0u76l1oi36cpxzo8xe1t9neiwqoasuocw1svfwoyevangktfap3nx254v0wnebh6r9qjejeygp4qhcqj139hqtbn9hs4g9l78rp0v5n5i0mlixdfsisck2vqjpodies7v011hfxk18wtbg9kjhcpsbr4o7xpc64wrn0agk9qbtpkmdqnov2z\"\r\n}",
+            "raw": "{\r\n    \"email\": \"b4a879ea-7f07-4241-a9f1-8a18d9230e8f@domain.com\",\r\n    \"msgText\": \"de2i7qzaf58k8335wzhtxmct3ph7jnq1v4n4zjfx5frj1uk0e1qre6mce5jgxoxaxl35s1axp4qmw3w0rvab2xibfgm52dbgfr95ph86me4fj1kozjg7bk09nawfyodhsx65po7r9pkx23jh79nv4difce5agoqliqu955itcyor4u1p8ya9kfpgbj8fsmwqz285lzd1\"\r\n}",
             "options": {
               "raw": {
                 "language": "json"
@@ -21419,7 +22102,7 @@
           }
         },
         "response": {
-          "id": "eb2f2bbf-1f44-4397-876a-80b0ed78a793",
+          "id": "e8ba853e-443d-43d4-82ee-663c907163cc",
           "status": "Created",
           "code": 201,
           "header": [
@@ -21429,7 +22112,7 @@
             },
             {
               "key": "Date",
-              "value": "Fri, 02 Dec 2022 13:37:30 GMT"
+              "value": "Mon, 05 Dec 2022 10:52:23 GMT"
             },
             {
               "key": "Server",
@@ -21452,10 +22135,10 @@
             ]
           },
           "cookie": [],
-          "responseTime": 85,
+          "responseTime": 99,
           "responseSize": 2
         },
-        "id": "b819bbfd-0925-436e-83f2-bf28b1aa9c5c",
+        "id": "afbf2f1e-a160-4d2c-b0c5-c9adc8cd8ac6",
         "assertions": [
           {
             "assertion": "Status test",
@@ -21469,7 +22152,7 @@
       }
     ],
     "transfers": {
-      "responseTotal": 20458
+      "responseTotal": 21140
     },
     "failures": [],
     "error": null
