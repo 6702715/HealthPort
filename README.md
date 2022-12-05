@@ -101,4 +101,4 @@ Modify UnitTest1.cs for your Front-server address (and your driver if you've cha
 Run GUI/Selenium tests via command:
 dotnet test
 
-![1670250019520](image/README/1670250019520.png)
+![1670250661758](image/README/1670250661758.png)
